@@ -13,6 +13,17 @@ const CACHE_PREFIX = 'barcode-cache:';
 const FOUND_TTL_MS = 90 * 24 * 60 * 60 * 1000;
 const NOT_FOUND_TTL_MS = 24 * 60 * 60 * 1000;
 
+// Fotos escolhidas à mão para produtos cuja foto principal do Open Food Facts é ruim (ex.: tem uma mão na imagem).
+const IMAGE_OVERRIDES: Record<string, string> = {
+  // Nutella
+  '4008400401621': 'https://images.openfoodfacts.org/images/products/400/840/040/1621/front_de.239.400.jpg',
+};
+
+function withImageOverride(result: ProductLookupResult): ProductLookupResult {
+  const imageUrl = IMAGE_OVERRIDES[result.code];
+  return result.status === 'found' && imageUrl ? { ...result, imageUrl } : result;
+}
+
 const memoryCache = new Map<string, CacheEntry>();
 const inFlight = new Map<string, Promise<ProductLookupResult>>();
 
@@ -56,11 +67,11 @@ export function lookupProductByBarcode(code: string): Promise<ProductLookupResul
 
   const promise = (async () => {
     const cached = await readCache(code);
-    if (cached) return cached;
+    if (cached) return withImageOverride(cached);
 
     const result = await fetchProductByBarcode(code);
     if (result.status !== 'error') await writeCache(code, result);
-    return result;
+    return withImageOverride(result);
   })().finally(() => inFlight.delete(code));
 
   inFlight.set(code, promise);

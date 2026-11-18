@@ -1,6 +1,6 @@
 import { useFocusEffect } from 'expo-router';
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
+import { FlatList, Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { useToast } from '@/components/toast';
@@ -91,9 +91,18 @@ export default function ListScreen() {
           const background = item.exists ? info.background : MISSING_STYLE.background;
           return (
             <View style={styles.card}>
-              <View style={[styles.icon, { backgroundColor: background }]}>
-                <Text style={[styles.iconText, { color }]}>{status.glyph}</Text>
-              </View>
+              {item.imageUrl ? (
+                <Image
+                  source={{ uri: item.imageUrl }}
+                  style={[styles.photo, { borderColor: color }, !item.exists && styles.photoMissing]}
+                  resizeMode="cover"
+                  accessibilityLabel={item.name}
+                />
+              ) : (
+                <View style={[styles.icon, { backgroundColor: background }]}>
+                  <Text style={[styles.iconText, { color }]}>{status.glyph}</Text>
+                </View>
+              )}
               <View style={styles.cardInfo}>
                 <Text style={styles.itemName}>{item.name}</Text>
                 <Text style={styles.itemMeta}>{status.dateLine}</Text>
@@ -168,6 +177,8 @@ const styles = StyleSheet.create({
     gap: 12,
   },
   icon: { width: 40, height: 40, borderRadius: 20, alignItems: 'center', justifyContent: 'center' },
+  photo: { width: 48, height: 48, borderRadius: 24, borderWidth: 2, backgroundColor: '#ffffff' },
+  photoMissing: { opacity: 0.5 },
   iconText: { fontSize: 20, fontWeight: '700' },
   cardInfo: { flex: 1, gap: 5 },
   itemName: { fontSize: 15, fontWeight: '600', lineHeight: 19, color: Colors.light.text },

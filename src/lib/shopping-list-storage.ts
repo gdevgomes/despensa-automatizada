@@ -11,6 +11,8 @@ export type ListItem = {
   /** Validade escolhida no scanner — último dia do mês selecionado (ISO). */
   expirationDate: string;
   exists: boolean;
+  /** Foto do produto (Open Food Facts), quando disponível. */
+  imageUrl?: string;
 };
 
 export type NewListItem = {
@@ -18,6 +20,7 @@ export type NewListItem = {
   code: string;
   expiryYear: number;
   expiryMonth: number; // 1-12
+  imageUrl?: string;
 };
 
 export async function getListItems(): Promise<ListItem[]> {
@@ -42,6 +45,7 @@ export async function appendList(newItems: NewListItem[]): Promise<ListItem[]> {
     buyDate,
     expirationDate: new Date(item.expiryYear, item.expiryMonth, 0, 23, 59, 59).toISOString(),
     exists: true,
+    imageUrl: item.imageUrl,
   }));
   await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify([...existing, ...created]));
   return created;

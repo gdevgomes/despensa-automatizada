@@ -68,7 +68,7 @@ export default function ScannerScreen() {
 
   const currentItem: NewListItem | null =
     product?.status === 'found' && expiryMonth !== null
-      ? { code: product.code, name: product.name, expiryYear, expiryMonth }
+      ? { code: product.code, name: product.name, expiryYear, expiryMonth, imageUrl: product.imageUrl }
       : null;
   const pick = expiryMonth !== null ? expiryInfo(monthEndIso(expiryYear, expiryMonth)) : null;
 
