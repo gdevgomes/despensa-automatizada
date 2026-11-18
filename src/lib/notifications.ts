@@ -116,7 +116,7 @@ export async function cancelReminderForItem(itemId: string) {
 type Listener = () => void;
 const changeListeners = new Set<Listener>();
 
-/** Avisa quando uma resposta de notificação alterou a dispensa (para telas abertas recarregarem). */
+/** Avisa quando uma resposta de notificação alterou a despensa (para telas abertas recarregarem). */
 export function onPantryChangedByReminder(listener: Listener) {
   changeListeners.add(listener);
   return () => {
@@ -179,7 +179,7 @@ export async function scheduleInactivityReminder() {
   await Notifications.scheduleNotificationAsync({
     identifier: INACTIVITY_ID,
     content: {
-      title: 'Hora de atualizar sua dispensa',
+      title: 'Hora de atualizar sua despensa',
       body: 'Faz tempo que você não abre o app. Confira o que você tem em casa e adicione novos produtos.',
     },
     trigger: { type: Notifications.SchedulableTriggerInputTypes.DATE, date: new Date(Date.now() + delayMs), channelId: CHANNEL_ID },

@@ -49,7 +49,7 @@ export default function ListScreen() {
     } else {
       await setItemExists(item.id, true);
       await scheduleConsumptionReminders([item]).catch(() => {});
-      showToast('Voltou para a dispensa');
+      showToast('Voltou para a despensa');
     }
     await load();
   }
@@ -58,7 +58,7 @@ export default function ListScreen() {
     <SafeAreaView style={styles.safeArea} edges={['top']}>
       <View style={styles.header}>
         <View style={styles.titleBlock}>
-          <Text style={styles.title}>Minha dispensa</Text>
+          <Text style={styles.title}>Minha despensa</Text>
           <Text style={styles.subtitle}>Ordenada por validade</Text>
         </View>
         <View style={styles.segmented}>
@@ -74,7 +74,7 @@ export default function ListScreen() {
         ListEmptyComponent={
           <Text style={styles.empty}>
             {filter === 'exists'
-              ? 'Nenhum produto na dispensa. Escaneie um código de barras para começar.'
+              ? 'Nenhum produto na despensa. Escaneie um código de barras para começar.'
               : 'Nenhum produto marcado como acabou.'}
           </Text>
         }

@@ -118,7 +118,7 @@ export default function ScannerScreen() {
       } catch {
         // lembretes são opcionais: falha ao agendar não deve impedir o cadastro
       }
-      showToast('Produto adicionado à dispensa');
+      showToast('Produto adicionado à despensa');
       resetScan();
     } finally {
       setSaving(false);

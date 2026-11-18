@@ -52,8 +52,8 @@ button{font-family:inherit}
 
 <sc-if value="{{ isSplash }}" hint-placeholder-val="{{ true }}">
 <div data-screen-label="01 Splash" style="position:absolute;inset:0;background:#0C68C8;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;z-index:40">
-<img src="assets/asset-30d1c21b.png" alt="Dispensa Automatizada" style="width:150px;height:150px;object-fit:contain;transition:opacity .7s ease,transform .9s cubic-bezier(.2,1.4,.4,1);opacity:{{ splashOp }};transform:{{ splashTf }}">
-<div style="color:#fff;font-size:22px;font-weight:600;letter-spacing:.2px;transition:opacity .7s ease .3s;opacity:{{ splashOp }}">Dispensa Automatizada</div>
+<img src="assets/asset-30d1c21b.png" alt="Despensa Automatizada" style="width:150px;height:150px;object-fit:contain;transition:opacity .7s ease,transform .9s cubic-bezier(.2,1.4,.4,1);opacity:{{ splashOp }};transform:{{ splashTf }}">
+<div style="color:#fff;font-size:22px;font-weight:600;letter-spacing:.2px;transition:opacity .7s ease .3s;opacity:{{ splashOp }}">Despensa Automatizada</div>
 <div style="position:absolute;bottom:56px;width:120px;height:3px;border-radius:2px;background:rgba(255,255,255,.25);overflow:hidden"><div style="height:100%;background:#fff;transition:width 2.1s linear;width:{{ splashBar }}"></div></div>
 </div>
 </sc-if>
@@ -124,7 +124,7 @@ button{font-family:inherit}
 <sc-if value="{{ isList }}" hint-placeholder-val="{{ false }}">
 <div data-screen-label="03 Lista" style="flex:1;min-height:0;display:flex;flex-direction:column">
 <div style="padding:12px 20px 14px;display:flex;flex-direction:column;gap:14px;border-bottom:1px solid rgba(0,0,0,.08)">
-<div style="display:flex;flex-direction:column;gap:2px"><div style="font-size:24px;font-weight:600">Minha dispensa</div><div style="font-size:14px;color:rgba(0,0,0,.6)">Ordenada por validade</div></div>
+<div style="display:flex;flex-direction:column;gap:2px"><div style="font-size:24px;font-weight:600">Minha despensa</div><div style="font-size:14px;color:rgba(0,0,0,.6)">Ordenada por validade</div></div>
 <div style="display:flex;border:1px solid #1976d2;border-radius:22px;padding:3px;gap:3px">
 <button sc-camel-on-click="{{ setTenho }}" style="flex:1;height:36px;border:none;border-radius:18px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;background:{{ tenhoBg }};color:{{ tenhoFg }}">Tenho · {{ tenhoCount }}</button>
 <button sc-camel-on-click="{{ setAcabou }}" style="flex:1;height:36px;border:none;border-radius:18px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;background:{{ acabouBg }};color:{{ acabouFg }}">Acabou · {{ acabouCount }}</button>
@@ -165,7 +165,7 @@ button{font-family:inherit}
 <div data-screen-label="04 Notificação" sc-camel-on-click="{{ notifNo }}" style="position:absolute;inset:0;background:rgba(0,0,0,.38);z-index:30;padding:44px 10px 0">
 <div sc-camel-on-click="{{ stop }}" style="background:#fff;border-radius:22px;box-shadow:0 10px 30px rgba(0,0,0,.3);padding:14px 16px 8px;display:flex;flex-direction:column;gap:6px">
 <div sc-camel-on-click="{{ notifOpenList }}" style="display:flex;flex-direction:column;gap:6px;cursor:pointer">
-<div style="display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(0,0,0,.6)"><img src="assets/asset-4f823ea6.png" alt="" style="width:20px;height:20px;border-radius:5px">Dispensa Automatizada · Lembretes de consumo · agora</div>
+<div style="display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(0,0,0,.6)"><img src="assets/asset-4f823ea6.png" alt="" style="width:20px;height:20px;border-radius:5px">Despensa Automatizada · Lembretes de consumo · agora</div>
 <div style="font-size:15px;font-weight:600">Você já consumiu este produto?</div>
 <div style="font-size:14px;color:rgba(0,0,0,.7);line-height:1.4">{{ notifBody }}</div>
 </div>
@@ -179,7 +179,7 @@ button{font-family:inherit}
 </div>
 
 <div style="max-width:280px;display:flex;flex-direction:column;gap:14px">
-<div style="font-size:20px;font-weight:600">Dispensa Automatizada</div>
+<div style="font-size:20px;font-weight:600">Despensa Automatizada</div>
 <div style="font-size:14px;line-height:1.5;color:rgba(0,0,0,.6)">Protótipo interativo. Data simulada: 28/09/2026. Toque na câmera para ler um produto, escolha a validade e adicione. Na Lista, alterne entre Tenho e Acabou.</div>
 <div style="display:flex;flex-direction:column;gap:8px">
 <button sc-camel-on-click="{{ simNotif }}" style="height:42px;border:none;border-radius:6px;background:#1976d2;color:#fff;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px" style-hover="background:#1565c0"><span style="font-family:'Material Symbols Rounded';font-size:20px">notifications</span>Simular notificação</button>
@@ -258,13 +258,13 @@ class Component extends DCLogic {
     if (s.month == null) return;
     const p = CATALOG[s.pi];
     this.setState(st => ({ items: [...st.items, { id: Date.now(), name: p.name, y: st.year, m: st.month, has: true }] }));
-    this.showToast('Produto adicionado à dispensa');
+    this.showToast('Produto adicionado à despensa');
     this.rescan();
   }
   toggle(id) {
     const it = this.state.items.find(i => i.id === id);
     this.setState(s => ({ items: s.items.map(i => i.id === id ? { ...i, has: !i.has } : i) }));
-    this.showToast(it.has ? 'Marcado como acabou · lembrete cancelado' : 'Voltou para a dispensa');
+    this.showToast(it.has ? 'Marcado como acabou · lembrete cancelado' : 'Voltou para a despensa');
   }
   notifTarget() {
     const list = this.state.items.filter(i => i.has).map(i => ({ ...i, inf: info(i.y, i.m) })).filter(i => i.inf.days >= 0).sort((a, b) => a.inf.exp - b.inf.exp);
@@ -316,7 +316,7 @@ class Component extends DCLogic {
       tenhoBg: tenho ? '#1976d2' : 'transparent', tenhoFg: tenho ? '#fff' : '#1976d2',
       acabouBg: !tenho ? '#1976d2' : 'transparent', acabouFg: !tenho ? '#fff' : '#1976d2',
       setTenho: () => this.setState({ filter: 'tenho' }), setAcabou: () => this.setState({ filter: 'acabou' }),
-      rows, isEmpty: rows.length === 0, emptyText: tenho ? 'Nenhum produto na dispensa. Escaneie um código de barras para começar.' : 'Nenhum produto marcado como acabou.',
+      rows, isEmpty: rows.length === 0, emptyText: tenho ? 'Nenhum produto na despensa. Escaneie um código de barras para começar.' : 'Nenhum produto marcado como acabou.',
       tabSBg: tabS ? '#e3f2fd' : 'transparent', tabSFg: tabS ? '#1565c0' : 'rgba(0,0,0,.6)',
       tabLBg: !tabS ? '#e3f2fd' : 'transparent', tabLFg: !tabS ? '#1565c0' : 'rgba(0,0,0,.6)',
       goScanner: () => this.setState({ tab: 'scanner' }, () => this.armAuto()),
@@ -326,7 +326,7 @@ class Component extends DCLogic {
       notifBody: target ? `${target.name} vence em ${target.inf.d}. Toque para abrir a lista.` : '',
       stop: e => e.stopPropagation(),
       notifYes: e => { e.stopPropagation(); const t = this.notifTarget(); this.setState(st => ({ notifOpen: false, tab: 'list', filter: 'tenho', items: st.items.map(i => i.id === t.id ? { ...i, has: false } : i) })); this.showToast('Marcado como acabou · lembrete cancelado'); },
-      notifNo: e => { e.stopPropagation(); this.setState({ notifOpen: false }); this.showToast('Tudo bem, o produto continua na dispensa'); },
+      notifNo: e => { e.stopPropagation(); this.setState({ notifOpen: false }); this.showToast('Tudo bem, o produto continua na despensa'); },
       notifOpenList: () => this.setState({ notifOpen: false, tab: 'list', filter: 'tenho' }),
       simNotif: () => { if (s.screen !== 'app') return; this.notifTarget() ? this.setState({ notifOpen: true }) : this.showToast('Nenhum produto para lembrar'); },
       replaySplash: () => this.runSplash(),

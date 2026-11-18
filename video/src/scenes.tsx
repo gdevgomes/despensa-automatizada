@@ -29,7 +29,7 @@ export const IntroScene: React.FC<{ duration: number }> = ({ duration }) => {
     <Scene duration={duration}>
       <AbsoluteFill style={{ alignItems: "center", justifyContent: "center", gap: 36 }}>
         <Img src={staticFile("logo.png")} style={{ width: 300, height: 300, borderRadius: 66, transform: `scale(${0.6 + logo * 0.4})`, opacity: logo, boxShadow: "0 30px 60px rgba(25,118,210,0.3)" }} />
-        <div style={{ ...title, fontSize: 110, fontWeight: 800, color: COLORS.primary }}>Dispensa Automatizada</div>
+        <div style={{ ...title, fontSize: 110, fontWeight: 800, color: COLORS.primary }}>Despensa Automatizada</div>
         <div style={{ ...tagline, fontSize: 48, color: COLORS.ink, maxWidth: 1300, textAlign: "center", lineHeight: 1.25 }}>
           Controle o que você tem em casa e não deixe a comida vencer.
         </div>
@@ -126,7 +126,7 @@ export const ExpiryScene: React.FC<{ duration: number }> = ({ duration }) => {
       <SidePanel
         step="PASSO 2"
         title="Informe a validade"
-        lines={["Escolha o ano e o mês da validade.", "Toque em adicionar.", "O produto entra na sua dispensa em poucos segundos."]}
+        lines={["Escolha o ano e o mês da validade.", "Toque em adicionar.", "O produto entra na sua despensa em poucos segundos."]}
         firstLineAt={30}
         lineGap={190}
       />
@@ -149,7 +149,7 @@ export const ListScene: React.FC<{ duration: number }> = ({ duration }) => {
   return (
     <Scene duration={duration}>
       <SidePanel
-        step="SUA DISPENSA"
+        step="SUA DESPENSA"
         title="Tudo em uma lista"
         lines={[
           "Cada produto aparece com a sua foto.",
@@ -212,7 +212,7 @@ export const ReminderScene: React.FC<{ duration: number }> = ({ duration }) => {
         >
           <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
             <Img src={staticFile("logo.png")} style={{ width: 28, height: 28, borderRadius: 7 }} />
-            <div style={{ fontSize: 12, color: COLORS.muted }}>Dispensa Automatizada · agora</div>
+            <div style={{ fontSize: 12, color: COLORS.muted }}>Despensa Automatizada · agora</div>
           </div>
           <div style={{ marginTop: 10, fontSize: 16, fontWeight: 700, color: COLORS.ink }}>Nutella vence em 7 dias</div>
           <div style={{ marginTop: 4, fontSize: 13, color: COLORS.muted }}>Você já consumiu este produto?</div>

@@ -1,8 +1,8 @@
-# Dispensa Automatizada
+# Despensa Automatizada
 
 **Controle o que você tem em casa e não deixe a comida vencer.**
 
-Dispensa Automatizada ajuda você a organizar os alimentos guardados em casa. Escaneie o produto, informe a validade e receba um aviso antes de vencer. Menos desperdício, mais economia e uma despensa sempre em dia.
+Despensa Automatizada ajuda você a organizar os alimentos guardados em casa. Escaneie o produto, informe a validade e receba um aviso antes de vencer. Menos desperdício, mais economia e uma despensa sempre em dia.
 
 ## Como funciona
 

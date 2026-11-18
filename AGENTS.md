@@ -6,7 +6,7 @@ Read the exact versioned docs at https://docs.expo.dev/versions/v57.0.0/ before 
 
 ## Visão geral
 
-Dispensa Automatizada é um app mobile (Android e iOS) que controla os alimentos guardados em casa. O usuário escaneia o código de barras do produto, informa a validade e recebe lembretes para consumir antes de vencer. O app também lê o QR Code de NFC-e para importar produtos de uma nota fiscal. A identidade visual está em `MARCA.md`.
+Despensa Automatizada é um app mobile (Android e iOS) que controla os alimentos guardados em casa. O usuário escaneia o código de barras do produto, informa a validade e recebe lembretes para consumir antes de vencer. O app também lê o QR Code de NFC-e para importar produtos de uma nota fiscal. A identidade visual está em `MARCA.md`.
 
 ## Stack
 
