@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+  // Usa React local em vez do CDN (funciona offline).
+  window.__resources = {
+    "https://unpkg.com/react@18.3.1/umd/react.production.min.js": "assets/https_unpkg_com_react_18_3_1_umd_react_production_min_js-7a110b9a.js",
+    "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js": "assets/https_unpkg_com_react_dom_18_3_1_umd_react_dom_production_min_js-0821845d.js"
+  };
+</script>
+<script src="assets/asset-db080192.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>/* fallback */
+@font-face {
+  font-family: 'Material Symbols Rounded';
+  font-style: normal;
+  font-weight: 400;
+  src: url("assets/asset-6e3bf69c.woff2") format('woff2');
+}
+
+.material-symbols-rounded {
+  font-family: 'Material Symbols Rounded';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -moz-font-feature-settings: 'liga';
+  -moz-osx-font-smoothing: grayscale;
+}
+</style>
+<style>
+body{margin:0;background:#eceff1;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:rgba(0,0,0,.87);-webkit-font-smoothing:antialiased}
+a{color:#1976d2}a:hover{color:#1565c0}
+button{font-family:inherit}
+@keyframes dscan{0%{top:12%}100%{top:86%}}
+@keyframes dpulse{0%,100%{opacity:.55}50%{opacity:1}}
+</style>
+</helmet>
+<div style="min-height:100vh;display:flex;flex-wrap:wrap;gap:48px;align-items:center;justify-content:center;padding:40px 24px;box-sizing:border-box">
+
+<div data-screen-label="Celular" style="width:390px;height:844px;border-radius:48px;border:10px solid #16191c;box-shadow:0 24px 60px rgba(0,0,0,.22);background:#fff;position:relative;overflow:hidden;display:flex;flex-direction:column;flex:none">
+
+<sc-if value="{{ isSplash }}" hint-placeholder-val="{{ true }}">
+<div data-screen-label="01 Splash" style="position:absolute;inset:0;background:#0C68C8;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;z-index:40">
+<img src="assets/asset-30d1c21b.png" alt="Dispensa Automatizada" style="width:150px;height:150px;object-fit:contain;transition:opacity .7s ease,transform .9s cubic-bezier(.2,1.4,.4,1);opacity:{{ splashOp }};transform:{{ splashTf }}">
+<div style="color:#fff;font-size:22px;font-weight:600;letter-spacing:.2px;transition:opacity .7s ease .3s;opacity:{{ splashOp }}">Dispensa Automatizada</div>
+<div style="position:absolute;bottom:56px;width:120px;height:3px;border-radius:2px;background:rgba(255,255,255,.25);overflow:hidden"><div style="height:100%;background:#fff;transition:width 2.1s linear;width:{{ splashBar }}"></div></div>
+</div>
+</sc-if>
+
+<div style="height:40px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 28px;font-size:14px;font-weight:600;background:#fff">
+<span>9:41</span>
+<div style="display:flex;gap:4px;align-items:center"><span style="font-family:'Material Symbols Rounded';font-size:17px;font-variation-settings:'FILL' 1">signal_cellular_alt</span><span style="font-family:'Material Symbols Rounded';font-size:17px;font-variation-settings:'FILL' 1">wifi</span><span style="font-family:'Material Symbols Rounded';font-size:18px;font-variation-settings:'FILL' 1">battery_full</span></div>
+</div>
+
+<div style="flex:1;min-height:0;position:relative;display:flex;flex-direction:column">
+
+<sc-if value="{{ isScanner }}" hint-placeholder-val="{{ true }}">
+<div data-screen-label="02 Scanner" style="flex:1;min-height:0;display:flex;flex-direction:column">
+<div sc-camel-on-click="{{ read }}" style="position:relative;flex:none;overflow:hidden;background:linear-gradient(165deg,#3b4a52 0%,#1e2a30 55%,#11181c 100%);transition:height .5s cubic-bezier(.3,.8,.3,1);height:{{ camH }};cursor:{{ camCursor }}">
+<div style="position:absolute;left:50%;top:50%;width:230px;height:300px;transform:translate(-50%,-50%) rotate(-4deg);border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.04));filter:blur(2px)"></div>
+<sc-if value="{{ isScanning }}" hint-placeholder-val="{{ true }}">
+<div style="position:absolute;top:18px;left:0;right:0;display:flex;justify-content:center"><div style="display:flex;align-items:center;gap:8px;background:rgba(0,0,0,.55);color:#fff;font-size:14px;font-weight:500;padding:9px 16px;border-radius:20px"><span style="font-family:'Material Symbols Rounded';font-size:20px">barcode_scanner</span>Aponte para o código de barras</div></div>
+</sc-if>
+<div style="position:absolute;left:50%;top:50%;width:270px;height:150px;transform:translate(-50%,-50%)">
+<div style="position:absolute;left:50%;top:50%;width:170px;height:78px;transform:translate(-50%,-50%);border-radius:6px;background:#f4f4f4;opacity:.8;filter:blur(.6px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:8px;box-sizing:border-box"><div style="width:100%;flex:1;background:repeating-linear-gradient(90deg,#222 0 2px,transparent 2px 4px,#222 4px 5px,transparent 5px 8px,#222 8px 11px,transparent 11px 12px)"></div><div style="font:600 9px ui-monospace,monospace;letter-spacing:2px;color:#222">{{ ean }}</div></div>
+<div style="position:absolute;left:0;top:0;width:34px;height:34px;border-left:4px solid #fff;border-top:4px solid #fff;border-top-left-radius:14px"></div>
+<div style="position:absolute;right:0;top:0;width:34px;height:34px;border-right:4px solid #fff;border-top:4px solid #fff;border-top-right-radius:14px"></div>
+<div style="position:absolute;left:0;bottom:0;width:34px;height:34px;border-left:4px solid #fff;border-bottom:4px solid #fff;border-bottom-left-radius:14px"></div>
+<div style="position:absolute;right:0;bottom:0;width:34px;height:34px;border-right:4px solid #fff;border-bottom:4px solid #fff;border-bottom-right-radius:14px"></div>
+<sc-if value="{{ isScanning }}" hint-placeholder-val="{{ true }}">{{ scanLine }}</sc-if>
+</div>
+<sc-if value="{{ isScanning }}" hint-placeholder-val="{{ true }}">
+<div style="position:absolute;bottom:26px;left:0;right:0;text-align:center;color:rgba(255,255,255,.72);font-size:13px">Toque na câmera para simular a leitura</div>
+</sc-if>
+<div style="position:absolute;inset:0;background:#fff;pointer-events:none;transition:opacity .55s ease-out;opacity:{{ flashOp }}"></div>
+<div style="position:absolute;left:50%;top:50%;width:76px;height:76px;margin:-38px 0 0 -38px;border-radius:50%;background:#2e7d32;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(46,125,50,.45);border:3px solid #fff;transition:transform .5s cubic-bezier(.2,1.6,.4,1);transform:{{ checkTf }}"><span style="font-family:'Material Symbols Rounded';font-size:44px;color:#fff;font-variation-settings:'wght' 700">check</span></div>
+</div>
+
+<sc-if value="{{ showDetails }}" hint-placeholder-val="{{ false }}">
+<div style="flex:1;min-height:0;overflow-y:auto;padding:18px 20px 20px;display:flex;flex-direction:column;gap:18px">
+<div style="display:flex;flex-direction:column;gap:6px">
+<div style="display:flex;align-items:center;gap:6px;color:#2e7d32;font-size:13px;font-weight:600"><span style="font-family:'Material Symbols Rounded';font-size:18px;font-variation-settings:'FILL' 1">check_circle</span>Produto encontrado · EAN {{ ean }}</div>
+<div style="font-size:21px;font-weight:600;line-height:1.25;text-wrap:pretty">{{ productName }}</div>
+</div>
+<div style="height:1px;background:rgba(0,0,0,.12)"></div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="font-size:16px;font-weight:600">Selecionar a validade do produto</div>
+<div style="font-size:12px;font-weight:600;letter-spacing:.6px;color:rgba(0,0,0,.6)">ANO</div>
+<div style="display:flex;gap:8px;overflow-x:auto;margin:0 -20px;padding:0 20px 4px;scrollbar-width:none">
+<sc-for list="{{ years }}" as="y" hint-placeholder-count="5">
+<button sc-camel-on-click="{{ y.onClick }}" style="flex:none;height:36px;padding:0 16px;border-radius:18px;font-size:14px;font-weight:500;cursor:pointer;transition:all .15s;background:{{ y.bg }};color:{{ y.fg }};border:1px solid {{ y.bd }}">{{ y.label }}</button>
+</sc-for>
+</div>
+<div style="font-size:12px;font-weight:600;letter-spacing:.6px;color:rgba(0,0,0,.6)">MÊS</div>
+<div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px">
+<sc-for list="{{ months }}" as="m" hint-placeholder-count="12">
+<button sc-camel-on-click="{{ m.onClick }}" disabled="{{ m.disabled }}" style="height:44px;border-radius:8px;font-size:14px;font-weight:600;letter-spacing:.4px;transition:all .15s;background:{{ m.bg }};color:{{ m.fg }};border:1px solid {{ m.bd }};cursor:{{ m.cursor }}">{{ m.label }}</button>
+</sc-for>
+</div>
+<sc-if value="{{ hasPick }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;align-items:center;gap:8px;font-size:14px;color:rgba(0,0,0,.6)">Validade {{ pickLabel }}<span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:12px;font-size:12px;font-weight:600;background:{{ pickBg }};color:{{ pickFg }}">{{ pickStatus }}</span></div>
+</sc-if>
+</div>
+<div style="display:flex;flex-direction:row-reverse;gap:10px;margin-top:auto;padding-top:4px">
+<button sc-camel-on-click="{{ add }}" style="flex:1;min-width:0;height:48px;padding:0 8px;border:none;border-radius:6px;font-size:13px;font-weight:600;letter-spacing:.4px;line-height:1.2;transition:all .2s;background:{{ addBg }};color:{{ addFg }};box-shadow:{{ addShadow }};cursor:{{ addCursor }}">ADICIONAR NOVO PRODUTO</button>
+<button sc-camel-on-click="{{ rescan }}" style="flex:1;min-width:0;height:48px;padding:0 8px;border-radius:6px;background:#fff;border:1px solid rgba(25,118,210,.5);color:#1976d2;font-size:13px;font-weight:600;line-height:1.2;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px" style-hover="background:#e3f2fd"><span style="font-family:'Material Symbols Rounded';font-size:20px">refresh</span>Escanear novamente</button>
+</div>
+</div>
+</sc-if>
+</div>
+</sc-if>
+
+<sc-if value="{{ isList }}" hint-placeholder-val="{{ false }}">
+<div data-screen-label="03 Lista" style="flex:1;min-height:0;display:flex;flex-direction:column">
+<div style="padding:12px 20px 14px;display:flex;flex-direction:column;gap:14px;border-bottom:1px solid rgba(0,0,0,.08)">
+<div style="display:flex;flex-direction:column;gap:2px"><div style="font-size:24px;font-weight:600">Minha dispensa</div><div style="font-size:14px;color:rgba(0,0,0,.6)">Ordenada por validade</div></div>
+<div style="display:flex;border:1px solid #1976d2;border-radius:22px;padding:3px;gap:3px">
+<button sc-camel-on-click="{{ setTenho }}" style="flex:1;height:36px;border:none;border-radius:18px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;background:{{ tenhoBg }};color:{{ tenhoFg }}">Tenho · {{ tenhoCount }}</button>
+<button sc-camel-on-click="{{ setAcabou }}" style="flex:1;height:36px;border:none;border-radius:18px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;background:{{ acabouBg }};color:{{ acabouFg }}">Acabou · {{ acabouCount }}</button>
+</div>
+</div>
+<div style="flex:1;min-height:0;overflow-y:auto;padding:14px 16px 20px;display:flex;flex-direction:column;gap:10px;background:#fafafa">
+<sc-for list="{{ rows }}" as="r" hint-placeholder-count="5">
+<div style="background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:12px;padding:14px;display:flex;gap:12px;align-items:center">
+<div style="width:40px;height:40px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;background:{{ r.bg }};color:{{ r.fg }}"><span style="font-family:'Material Symbols Rounded';font-size:22px;font-variation-settings:'FILL' 1">{{ r.icon }}</span></div>
+<div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:5px">
+<div style="font-size:15px;font-weight:600;line-height:1.25">{{ r.name }}</div>
+<div style="font-size:13px;color:rgba(0,0,0,.6)">{{ r.dateLine }}</div>
+<div style="display:flex"><span style="display:inline-flex;align-items:center;height:22px;padding:0 9px;border-radius:11px;font-size:12px;font-weight:600;background:{{ r.bg }};color:{{ r.fg }}">{{ r.label }}</span></div>
+</div>
+<button sc-camel-on-click="{{ r.onToggle }}" style="flex:none;height:36px;padding:0 12px;border-radius:6px;border:1px solid rgba(25,118,210,.5);background:#fff;color:#1976d2;font-size:13px;font-weight:600;cursor:pointer" style-hover="background:#e3f2fd">{{ r.action }}</button>
+</div>
+</sc-for>
+<sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
+<div style="padding:48px 20px;text-align:center;color:rgba(0,0,0,.6);font-size:14px;display:flex;flex-direction:column;align-items:center;gap:8px"><span style="font-family:'Material Symbols Rounded';font-size:40px;color:rgba(0,0,0,.3)">inventory_2</span>{{ emptyText }}</div>
+</sc-if>
+</div>
+</div>
+</sc-if>
+
+<div style="position:absolute;left:16px;right:16px;bottom:14px;background:#323232;color:#fff;font-size:14px;padding:14px 16px;border-radius:6px;box-shadow:0 4px 14px rgba(0,0,0,.25);pointer-events:none;transition:opacity .25s,transform .25s;opacity:{{ toastOp }};transform:{{ toastTf }}">{{ toast }}</div>
+</div>
+
+<div style="height:72px;flex:none;border-top:1px solid rgba(0,0,0,.1);display:flex;background:#fff;padding-bottom:6px">
+<button sc-camel-on-click="{{ goScanner }}" style="flex:1;border:none;background:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px">
+<div style="width:60px;height:32px;border-radius:16px;display:flex;align-items:center;justify-content:center;transition:background .2s;background:{{ tabSBg }}"><span style="font-family:'Material Symbols Rounded';font-size:24px;color:{{ tabSFg }}">barcode_scanner</span></div>
+<span style="font-size:12px;font-weight:600;color:{{ tabSFg }}">Scanner</span></button>
+<button sc-camel-on-click="{{ goList }}" style="flex:1;border:none;background:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px">
+<div style="width:60px;height:32px;border-radius:16px;display:flex;align-items:center;justify-content:center;transition:background .2s;background:{{ tabLBg }}"><span style="font-family:'Material Symbols Rounded';font-size:24px;color:{{ tabLFg }}">format_list_bulleted</span></div>
+<span style="font-size:12px;font-weight:600;color:{{ tabLFg }}">Lista</span></button>
+</div>
+
+<sc-if value="{{ notifOpen }}" hint-placeholder-val="{{ false }}">
+<div data-screen-label="04 Notificação" sc-camel-on-click="{{ notifNo }}" style="position:absolute;inset:0;background:rgba(0,0,0,.38);z-index:30;padding:44px 10px 0">
+<div sc-camel-on-click="{{ stop }}" style="background:#fff;border-radius:22px;box-shadow:0 10px 30px rgba(0,0,0,.3);padding:14px 16px 8px;display:flex;flex-direction:column;gap:6px">
+<div sc-camel-on-click="{{ notifOpenList }}" style="display:flex;flex-direction:column;gap:6px;cursor:pointer">
+<div style="display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(0,0,0,.6)"><img src="assets/asset-4f823ea6.png" alt="" style="width:20px;height:20px;border-radius:5px">Dispensa Automatizada · Lembretes de consumo · agora</div>
+<div style="font-size:15px;font-weight:600">Você já consumiu este produto?</div>
+<div style="font-size:14px;color:rgba(0,0,0,.7);line-height:1.4">{{ notifBody }}</div>
+</div>
+<div style="display:flex;gap:4px;margin:2px -8px 0">
+<button sc-camel-on-click="{{ notifYes }}" style="height:40px;padding:0 12px;border:none;background:none;color:#1976d2;font-size:14px;font-weight:600;border-radius:20px;cursor:pointer" style-hover="background:#e3f2fd">Sim, já consumi</button>
+<button sc-camel-on-click="{{ notifNo }}" style="height:40px;padding:0 12px;border:none;background:none;color:#1976d2;font-size:14px;font-weight:600;border-radius:20px;cursor:pointer" style-hover="background:#e3f2fd">Ainda tenho</button>
+</div>
+</div>
+</div>
+</sc-if>
+</div>
+
+<div style="max-width:280px;display:flex;flex-direction:column;gap:14px">
+<div style="font-size:20px;font-weight:600">Dispensa Automatizada</div>
+<div style="font-size:14px;line-height:1.5;color:rgba(0,0,0,.6)">Protótipo interativo. Data simulada: 28/09/2026. Toque na câmera para ler um produto, escolha a validade e adicione. Na Lista, alterne entre Tenho e Acabou.</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<button sc-camel-on-click="{{ simNotif }}" style="height:42px;border:none;border-radius:6px;background:#1976d2;color:#fff;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px" style-hover="background:#1565c0"><span style="font-family:'Material Symbols Rounded';font-size:20px">notifications</span>Simular notificação</button>
+<button sc-camel-on-click="{{ replaySplash }}" style="height:42px;border-radius:6px;background:#fff;border:1px solid rgba(25,118,210,.5);color:#1976d2;font-size:14px;font-weight:600;cursor:pointer" style-hover="background:#e3f2fd">Rever splash</button>
+</div>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;startScreen&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;splash&quot;,&quot;scanner&quot;,&quot;lista&quot;],&quot;default&quot;:&quot;splash&quot;,&quot;tsType&quot;:&quot;'splash'|'scanner'|'lista'&quot;},&quot;autoScan&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+const TODAY = new Date(2026, 8, 28);
+const MESES = ['JAN','FEV','MAR','ABR','MAI','JUN','JUL','AGO','SET','OUT','NOV','DEZ'];
+const CATALOG = [
+  { name: 'Macarrão Espaguete Grano Duro 500g', ean: '7891234567895' },
+  { name: 'Atum Sólido em Óleo 170g', ean: '7896543210984' },
+  { name: 'Leite Condensado Integral 395g', ean: '7890001112223' },
+];
+const pad = n => String(n).padStart(2, '0');
+function info(y, m) {
+  const exp = new Date(y, m + 1, 0);
+  const days = Math.round((exp - TODAY) / 864e5);
+  const d = `${pad(exp.getDate())}/${pad(m + 1)}/${y}`;
+  if (days < 0) return { exp, days, d, label: 'Vencido', fg: '#d32f2f', bg: '#fdecea', icon: 'error' };
+  if (days < 30) return { exp, days, d, label: 'Vence em breve', fg: '#ed6c02', bg: '#fff3e0', icon: 'schedule' };
+  return { exp, days, d, label: 'Válido', fg: '#2e7d32', bg: '#e8f5e9', icon: 'check_circle' };
+}
+class Component extends DCLogic {
+  state = {
+    screen: (this.props.startScreen ?? 'splash') === 'splash' ? 'splash' : 'app',
+    tab: this.props.startScreen === 'lista' ? 'list' : 'scanner',
+    splashIn: false, phase: 'scanning', flash: 0, check: false, pi: 0, year: 2026, month: null,
+    filter: 'tenho', notifOpen: false, toast: '', toastOn: false,
+    items: [
+      { id: 1, name: 'Leite Integral 1L', y: 2026, m: 6, has: true },
+      { id: 2, name: 'Iogurte Natural 170g', y: 2026, m: 8, has: true },
+      { id: 3, name: 'Molho de Tomate 340g', y: 2026, m: 9, has: true },
+      { id: 4, name: 'Biscoito Água e Sal 200g', y: 2026, m: 11, has: true },
+      { id: 5, name: 'Feijão Carioca 1kg', y: 2027, m: 1, has: true },
+      { id: 6, name: 'Arroz Branco 5kg', y: 2027, m: 5, has: true },
+      { id: 7, name: 'Café Torrado e Moído 500g', y: 2026, m: 10, has: false },
+      { id: 8, name: 'Azeite Extra Virgem 500ml', y: 2027, m: 7, has: false },
+    ],
+  };
+  T = [];
+  later(fn, ms) { const t = setTimeout(fn, ms); this.T.push(t); return t; }
+  componentDidMount() { this.state.screen === 'splash' ? this.runSplash() : this.armAuto(); }
+  componentWillUnmount() { this.T.forEach(clearTimeout); }
+  runSplash() {
+    this.setState({ screen: 'splash', splashIn: false, notifOpen: false });
+    this.later(() => this.setState({ splashIn: true }), 80);
+    this.later(() => this.setState({ screen: 'app' }, () => this.armAuto()), 2500);
+  }
+  armAuto() {
+    clearTimeout(this.autoT);
+    if ((this.props.autoScan ?? false) && this.state.tab === 'scanner' && this.state.phase === 'scanning')
+      this.autoT = this.later(() => this.read(), 2800);
+  }
+  read() {
+    const s = this.state;
+    if (s.phase !== 'scanning' || s.tab !== 'scanner' || s.screen !== 'app' || s.notifOpen) return;
+    clearTimeout(this.autoT);
+    this.setState({ phase: 'flash', flash: 0.9, check: true });
+    this.later(() => this.setState({ flash: 0 }), 90);
+    this.later(() => this.setState({ phase: 'details' }), 750);
+  }
+  rescan() {
+    this.setState(s => ({ phase: 'scanning', check: false, month: null, year: 2026, pi: (s.pi + 1) % CATALOG.length }), () => this.armAuto());
+  }
+  showToast(msg) {
+    clearTimeout(this.toastT);
+    this.setState({ toast: msg, toastOn: true });
+    this.toastT = this.later(() => this.setState({ toastOn: false }), 2600);
+  }
+  add() {
+    const s = this.state;
+    if (s.month == null) return;
+    const p = CATALOG[s.pi];
+    this.setState(st => ({ items: [...st.items, { id: Date.now(), name: p.name, y: st.year, m: st.month, has: true }] }));
+    this.showToast('Produto adicionado à dispensa');
+    this.rescan();
+  }
+  toggle(id) {
+    const it = this.state.items.find(i => i.id === id);
+    this.setState(s => ({ items: s.items.map(i => i.id === id ? { ...i, has: !i.has } : i) }));
+    this.showToast(it.has ? 'Marcado como acabou · lembrete cancelado' : 'Voltou para a dispensa');
+  }
+  notifTarget() {
+    const list = this.state.items.filter(i => i.has).map(i => ({ ...i, inf: info(i.y, i.m) })).filter(i => i.inf.days >= 0).sort((a, b) => a.inf.exp - b.inf.exp);
+    return list[0];
+  }
+  renderVals() {
+    const s = this.state;
+    const p = CATALOG[s.pi];
+    const scanning = s.phase === 'scanning';
+    const years = Array.from({ length: 21 }, (_, k) => 2026 + k).map(y => {
+      const sel = y === s.year;
+      return { label: String(y), bg: sel ? '#1976d2' : '#fff', fg: sel ? '#fff' : 'rgba(0,0,0,.87)', bd: sel ? '#1976d2' : 'rgba(0,0,0,.23)',
+        onClick: () => this.setState(st => ({ year: y, month: y === 2026 && st.month != null && st.month < 8 ? null : st.month })) };
+    });
+    const months = MESES.map((label, m) => {
+      const dis = s.year === 2026 && m < 8, sel = s.month === m;
+      return { label, disabled: dis, cursor: dis ? 'default' : 'pointer',
+        bg: sel ? '#e3f2fd' : dis ? '#f5f5f5' : '#fff', fg: sel ? '#1565c0' : dis ? 'rgba(0,0,0,.3)' : 'rgba(0,0,0,.87)',
+        bd: sel ? '#1976d2' : dis ? 'transparent' : 'rgba(0,0,0,.23)', onClick: () => !dis && this.setState({ month: m }) };
+    });
+    const pick = s.month != null ? info(s.year, s.month) : null;
+    const hasPick = !!pick;
+    const tenho = s.filter === 'tenho';
+    const rows = s.items.filter(i => i.has === tenho).map(i => ({ ...i, inf: info(i.y, i.m) })).sort((a, b) => a.inf.exp - b.inf.exp).map(i => {
+      const f = i.inf;
+      const rel = f.days === 0 ? 'hoje' : f.days === 1 ? 'amanhã' : `em ${f.days} dias`;
+      const dateLine = f.days < 0 ? `Venceu em ${f.d}` : f.days < 30 ? `Vence em ${f.d} · ${rel}` : `Validade ${f.d}`;
+      return tenho
+        ? { name: i.name, dateLine, label: f.label, fg: f.fg, bg: f.bg, icon: f.icon, action: 'Acabou', onToggle: () => this.toggle(i.id) }
+        : { name: i.name, dateLine: `Validade ${pad(i.m + 1)}/${i.y}`, label: 'Acabou', fg: 'rgba(0,0,0,.6)', bg: '#eeeeee', icon: 'inventory_2', action: 'Tenho', onToggle: () => this.toggle(i.id) };
+    });
+    const target = s.notifOpen ? this.notifTarget() : null;
+    const tabS = s.tab === 'scanner';
+    return {
+      isSplash: s.screen === 'splash',
+      splashOp: s.splashIn ? 1 : 0, splashTf: s.splashIn ? 'scale(1)' : 'scale(.6)', splashBar: s.splashIn ? '100%' : '0%',
+      isScanner: tabS, isList: !tabS,
+      isScanning: scanning, showDetails: s.phase === 'details',
+      camH: s.phase === 'details' ? '210px' : '100%', camCursor: scanning ? 'pointer' : 'default',
+      flashOp: s.flash, checkTf: s.check ? (s.phase === 'details' ? 'scale(.75)' : 'scale(1)') : 'scale(0)',
+      scanLine: React.createElement('div', { style: { position: 'absolute', left: 10, right: 10, height: 2, borderRadius: 2, background: 'rgba(255,255,255,.95)', boxShadow: '0 0 12px 2px #1976d2', animation: 'dscan 1.6s ease-in-out infinite alternate' } }),
+      ean: p.ean, productName: p.name,
+      read: () => this.read(), rescan: () => this.rescan(), add: () => this.add(),
+      years, months, hasPick,
+      pickLabel: pick ? `${pad(s.month + 1)}/${s.year}` : '', pickStatus: pick?.label, pickBg: pick?.bg, pickFg: pick?.fg,
+      addBg: hasPick ? '#1976d2' : 'rgba(0,0,0,.12)', addFg: hasPick ? '#fff' : 'rgba(0,0,0,.38)',
+      addShadow: hasPick ? '0 3px 6px rgba(25,118,210,.3)' : 'none', addCursor: hasPick ? 'pointer' : 'not-allowed',
+      tenhoCount: s.items.filter(i => i.has).length, acabouCount: s.items.filter(i => !i.has).length,
+      tenhoBg: tenho ? '#1976d2' : 'transparent', tenhoFg: tenho ? '#fff' : '#1976d2',
+      acabouBg: !tenho ? '#1976d2' : 'transparent', acabouFg: !tenho ? '#fff' : '#1976d2',
+      setTenho: () => this.setState({ filter: 'tenho' }), setAcabou: () => this.setState({ filter: 'acabou' }),
+      rows, isEmpty: rows.length === 0, emptyText: tenho ? 'Nenhum produto na dispensa. Escaneie um código de barras para começar.' : 'Nenhum produto marcado como acabou.',
+      tabSBg: tabS ? '#e3f2fd' : 'transparent', tabSFg: tabS ? '#1565c0' : 'rgba(0,0,0,.6)',
+      tabLBg: !tabS ? '#e3f2fd' : 'transparent', tabLFg: !tabS ? '#1565c0' : 'rgba(0,0,0,.6)',
+      goScanner: () => this.setState({ tab: 'scanner' }, () => this.armAuto()),
+      goList: () => { clearTimeout(this.autoT); this.setState({ tab: 'list' }); },
+      toast: s.toast, toastOp: s.toastOn ? 1 : 0, toastTf: s.toastOn ? 'translateY(0)' : 'translateY(12px)',
+      notifOpen: s.notifOpen,
+      notifBody: target ? `${target.name} vence em ${target.inf.d}. Toque para abrir a lista.` : '',
+      stop: e => e.stopPropagation(),
+      notifYes: e => { e.stopPropagation(); const t = this.notifTarget(); this.setState(st => ({ notifOpen: false, tab: 'list', filter: 'tenho', items: st.items.map(i => i.id === t.id ? { ...i, has: false } : i) })); this.showToast('Marcado como acabou · lembrete cancelado'); },
+      notifNo: e => { e.stopPropagation(); this.setState({ notifOpen: false }); this.showToast('Tudo bem, o produto continua na dispensa'); },
+      notifOpenList: () => this.setState({ notifOpen: false, tab: 'list', filter: 'tenho' }),
+      simNotif: () => { if (s.screen !== 'app') return; this.notifTarget() ? this.setState({ notifOpen: true }) : this.showToast('Nenhum produto para lembrar'); },
+      replaySplash: () => this.runSplash(),
+    };
+  }
+}
+</script>
+
+
+<div id="__claude_design_branding"><style>#__claude_design_branding{position:fixed;right:16px;bottom:16px;z-index:2147483646;display:flex;align-items:center;gap:7px;height:30px;padding:0 5px 0 10px;border-radius:999px;font-family:"Anthropic Sans",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;font-size:12.5px;font-weight:400;line-height:1;letter-spacing:normal;text-transform:none;color:#141413;background:rgba(255,255,255,.86);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);box-shadow:0 0 0 .5px rgba(31,30,29,.14),0 2px 10px rgba(0,0,0,.09)}
+#__claude_design_branding *{box-sizing:border-box;margin:0}
+#__claude_design_branding a{color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
+#__claude_design_branding a:hover span{text-decoration:underline}
+#__claude_design_branding svg{flex:none}
+#__claude_design_branding a svg{color:#D97757}
+#__claude_design_branding button{width:20px;height:20px;padding:0;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:currentColor;opacity:.55;border:0;background:none;cursor:pointer;flex:none;font:inherit;transition:opacity .14s}
+#__claude_design_branding button:hover{opacity:1;background:rgba(127,127,127,.22)}
+@media print{#__claude_design_branding{display:none}}</style><a href="https://claude.com/product/design" target="_blank" rel="noopener noreferrer"><svg width="14" height="14" viewBox="0 0 20 21" fill="none" aria-hidden="true"><path fill="currentColor" d="M9.99902 0C15.5258 0.000170936 19.999 4.50643 19.999 10.0547C19.999 11.7656 19.5863 12.9976 18.7861 13.8203C17.9924 14.6362 16.9465 14.9138 15.9854 15.0078C15.05 15.0993 14.0097 15.0262 13.2549 15.0186C12.8524 15.0145 12.5177 15.0267 12.2441 15.0703C11.9682 15.1144 11.8143 15.1813 11.7305 15.2432C11.4745 15.4322 11.3353 15.7121 11.2656 16.1602C11.2303 16.3875 11.2168 16.6362 11.209 16.9131C11.2017 17.1715 11.1986 17.4893 11.1807 17.7705C11.1469 18.2975 11.0495 19.0865 10.4199 19.5908C9.7846 20.0996 8.88652 20.1057 7.85449 19.877C7.36399 19.7682 6.88652 19.6232 6.42578 19.4453C2.66989 17.9949 0.000187748 14.3414 0 10.0547C0 4.50643 4.47223 0.000171048 9.99902 0ZM9.99902 1.60547C5.36781 1.60564 1.60547 5.38391 1.60547 10.0547C1.60566 13.6582 3.84823 16.7296 7.00391 17.9482C7.39027 18.0974 7.79085 18.2184 8.20215 18.3096C9.1375 18.5169 9.384 18.3633 9.41602 18.3379C9.4524 18.3087 9.54558 18.1915 9.5791 17.668C9.5947 17.4239 9.59473 17.1786 9.60352 16.8672C9.61179 16.5742 9.62831 16.2435 9.67969 15.9131C9.78359 15.2455 10.0474 14.4906 10.7764 13.9521C11.1479 13.6778 11.5842 13.5493 11.9912 13.4844C12.4007 13.4191 12.8434 13.4088 13.2705 13.4131C14.1753 13.4222 15.0071 13.4905 15.8291 13.4102C16.6257 13.3322 17.2249 13.1235 17.6357 12.7012C18.0401 12.2855 18.3935 11.5261 18.3936 10.0547C18.3936 5.38391 14.6302 1.60564 9.99902 1.60547ZM5.11621 9.86719C5.86386 9.91468 6.45486 10.5348 6.45508 11.2939C6.45506 12.0838 5.81519 12.7245 5.02539 12.7246C4.28481 12.7246 3.67573 12.1617 3.60254 11.4404L3.59473 11.2939L3.60156 11.1533C3.66942 10.4596 4.23282 9.91186 4.93359 9.86719H5.11621ZM14.9814 7.19141C15.729 7.23889 16.3199 7.85919 16.3203 8.61816C16.3203 9.40801 15.6804 10.0487 14.8906 10.0488C14.1501 10.0487 13.5409 9.48586 13.4678 8.76465L13.46 8.61816L13.4668 8.47754C13.5348 7.78403 14.0983 7.23618 14.7988 7.19141H14.9814ZM6.4541 4.93457C7.20161 4.9822 7.79275 5.60231 7.79297 6.36133C7.79288 7.151 7.15291 7.7917 6.36328 7.79199C5.62274 7.79199 5.01369 7.22903 4.94043 6.50781L4.93262 6.36133L4.93945 6.2207C5.00731 5.52698 5.5707 4.97922 6.27148 4.93457H6.4541ZM11.3867 3.59668C12.1343 3.64419 12.7253 4.26436 12.7256 5.02344C12.7256 5.81326 12.0857 6.45393 11.2959 6.4541C10.5553 6.4541 9.94622 5.89123 9.87305 5.16992L9.86523 5.02344L9.87207 4.88281C9.93996 4.18912 10.5033 3.64133 11.2041 3.59668H11.3867Z"></path></svg><span>Made with Claude Design</span></a><button type="button" aria-label="Dismiss" onclick="this.parentElement.remove()"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 2l8 8M10 2l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg></button></div></body></html>
